@@ -1,6 +1,7 @@
 package ru.job4j.opp;
 
 public class Student {
+
     public void song() {
         System.out.println("I believe I can fly");
     }
