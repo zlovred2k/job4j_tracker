@@ -2,8 +2,15 @@ package ru.job4j.opp;
 
 public class Calculator {
 
+    public double add(double first, double second) {
+        return first + second;
+    }
+
+    public double add(double first, double second, double third) {
+        return add(add(first, second), third);
+    }
+
     private static int x = 5;
-    private int xyz;
 
     public static int sum(int y) {
         return x + y;
