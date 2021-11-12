@@ -2,6 +2,8 @@ package ru.job4j.opp;
 
 public class Calculator {
 
+    private static int x = 5;
+
     public double add(double first, double second) {
         return first + second;
     }
@@ -9,8 +11,6 @@ public class Calculator {
     public double add(double first, double second, double third) {
         return add(add(first, second), third);
     }
-
-    private static int x = 5;
 
     public static int sum(int y) {
         return x + y;
