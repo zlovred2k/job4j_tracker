@@ -28,6 +28,5 @@ public class Library {
                         + " page:" + books[index].getCountPage());
             }
         }
-
     }
 }
