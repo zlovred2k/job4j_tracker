@@ -6,7 +6,6 @@ import static org.hamcrest.Matchers.closeTo;
 import static org.junit.Assert.assertThat;
 
 public class PointTest {
-
     @Test
     public void testDistance3d() {
         Point point1 = new Point(2, 5, 2);
