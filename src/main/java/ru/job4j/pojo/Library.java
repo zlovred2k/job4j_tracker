@@ -11,20 +11,20 @@ public class Library {
         books[1] = book2;
         books[2] = book3;
         books[3] = book4;
-        for (int index = 0; index < books.length; index++) {
-            System.out.println("Name: " + books[index].getNameBook()
-                    + " page:" + books[index].getCountPage());
+        for (Book book : books) {
+            System.out.println("Name: " + book.getNameBook()
+                    + " page:" + book.getCountPage());
         }
         books[0] = books[3];
         books[3] = book1;
-        for (int index = 0; index < books.length; index++) {
-            System.out.println("Name: " + books[index].getNameBook()
-                    + " page:" + books[index].getCountPage());
+        for (Book book : books) {
+            System.out.println("Name: " + book.getNameBook()
+                    + " page:" + book.getCountPage());
         }
-        for (int index = 0; index < books.length; index++) {
-            if (books[index].getNameBook().equals("Clean code")) {
-                System.out.println("Name: " + books[index].getNameBook()
-                        + " page:" + books[index].getCountPage());
+        for (Book book : books) {
+            if ("Clean code".equals(book.getNameBook())) {
+                System.out.println("Name: " + book.getNameBook()
+                        + " page:" + book.getCountPage());
             }
         }
     }
