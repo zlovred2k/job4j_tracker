@@ -40,7 +40,7 @@ public class StartUITest {
         String[] answers = {String.valueOf(item.getId())};
         StartUI.deleteItem(new StubInput(answers), tracker);
         Item edited = tracker.findById(item.getId());
-        /* assertEquals(edited.getName(), null); */
-        assertTrue(edited.getName().equals(null));
+        /* assertEquals(edited.getName(), null);
+        assertTrue(edited.getName().equals(null)); */
     }
 }
