@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 public class StartUITest {
@@ -80,7 +81,7 @@ public class StartUITest {
         Item one = tracker.add(new Item("test1"));
         String replaceName = "New Test Name";
         Input in = new StubInput(
-                new String[] {"0", String.valueOf(one.getId()), replaceName, "1"}
+                new String[]{"0", String.valueOf(one.getId()), replaceName, "1"}
         );
         UserAction[] actions = new UserAction[]{
                 new EditAction(out),
@@ -176,5 +177,23 @@ public class StartUITest {
                         + "0. Find item by id" + ln
                         + "1. Exit Program" + ln
         ));
+    }
+
+    @Test
+    public void whenDeleteItem2() {
+        Output out = new StubOutput();
+        Tracker tracker = new Tracker();
+        Item item = new Item("new item");
+        tracker.add(item);
+        Input in = new StubInput(new String[]{"0", String.valueOf(item.getId()),
+                String.valueOf(item.getId()), "1"}
+        );
+        UserAction[] actions = new UserAction[]{
+                new DeleteAction(out),
+                new ExitAction()
+        };
+        new StartUI(out).init(in, tracker, actions);
+        Item edited = tracker.findById(item.getId());
+        assertNull(edited);
     }
 }
